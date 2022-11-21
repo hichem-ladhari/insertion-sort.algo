@@ -1,0 +1,22 @@
+ALGORITHM Insertion_Sort
+VAR
+    arr : ARRAY_OF INTEGER[n];
+    i,n,val,pos:INTEGER;
+BEGIN
+    write("Enter the size of the array");
+    read(n);
+    FOR i FROM 0 TO n-1 DO
+    write("Enter the element number ", i+1);
+    read(arr[i]);
+    END_FOR
+    FOR i FROM 1 TO n-1 DO
+        val:=arr[i];
+        pos:=i;
+        WHILE (pos>0 and arr[pos-1]>val) DO
+            arr[pos]:=arr[pos-1];
+            pos:=pos-1;
+        END_WHILE
+        arr[pos]:=val;
+    END_FOR
+    write(arr);
+END
